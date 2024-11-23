@@ -1,0 +1,35 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit, QLabel
+
+
+app = QApplication(sys.argv)
+window = QWidget()
+window.setWindowTitle("Admin panel")
+
+x1 = QLineEdit()
+x2 = QLineEdit()
+label1 = QLabel('login')
+label2 = QLabel('password')
+btn1 = QPushButton('войти')
+label3 = QLabel('Это не админ панель')
+
+def add():
+    sum = int( x1.text() ) + int( x2.text() )
+    print(sum)
+    label3.setText(str (sum) )
+
+btn1.clicked.connect(add)
+
+
+layout = QVBoxLayout()
+layout.addWidget(label1)
+layout.addWidget(x1)
+layout.addWidget(label2)
+layout.addWidget(x2)
+layout.addWidget(btn1)
+layout.addWidget((label3))
+
+window.setLayout(layout)
+
+window.show()
+sys.exit(app.exec_())
