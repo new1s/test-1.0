@@ -1,0 +1,18 @@
+import time
+
+
+def gaff():
+    print('*попугай гавкает*')
+    time.sleep(1)
+
+while True:
+    a = input("введи текст:")
+    if a.lower() == 'кушать':
+        print('*попугай летит кушать*')
+    elif a.lower() == 'танцуй':
+        print('*попугай танцует*')
+    elif a.lower() == 'голос':
+        for i in range(3):
+            gaff()
+    else:
+        print(f'слово попугая: {a} ')
